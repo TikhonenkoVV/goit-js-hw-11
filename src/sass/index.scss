@@ -1,0 +1,101 @@
+@import './normalise';
+@import './base';
+
+body {
+    background-color: #fff;
+}
+
+form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #404040;
+    z-index: 2;
+}
+
+form input {
+    min-width: 300px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.gallery {
+    padding: 15px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.photo-card {
+    overflow: hidden;
+    // border: 1px solid black;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.12);
+    cursor: zoom-in;
+}
+
+.photo-card:hover .photo-card-overlay {
+    opacity: 1;
+}
+
+.photo-card-box {
+    position: relative;
+}
+
+.photo-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 150ms;
+    pointer-events: none;
+}
+
+.info {
+    display: grid;
+    padding: 8px;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: white;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    // justify-content: center;
+}
+
+.info-icon {
+    fill: #404040;
+}
+
+.photo-card img {
+    height: 230px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.icon-likes {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://pixabay.com/static/img/sprites.svg');
+    background-repeat: no-repeat;
+    background-position: 0 -50px;
+}
