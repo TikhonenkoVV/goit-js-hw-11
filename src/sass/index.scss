@@ -3,6 +3,9 @@
 
 body {
     background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 form {
@@ -27,10 +30,14 @@ form input {
 }
 
 .gallery {
+    flex-grow: 1;
     padding: 15px;
     display: grid;
     gap: 15px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 290px;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .photo-card {
@@ -90,4 +97,21 @@ form input {
     height: 230px;
     object-fit: cover;
     width: 100%;
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+button[type] {
+    width: 100px;
 }

@@ -1,31 +1,24 @@
 import axios from 'axios';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { refs } from './refs.js';
-import { renderCards } from './render-markup.js';
+import { accessTogler } from './page-scroll.js';
+import { searchText } from './form-submit.js';
 
 const API_KEY = '34181261-dc9f612f556ce5adee055f5bd';
-const URL = 'https://pixabay.com/api/';
+axios.defaults.baseURL = 'https://pixabay.com/';
 
-export const getImg = async () => {
-    try {
-        const options = {
-            params: {
-                key: API_KEY,
-                q: refs.searchInput.value.trim(),
-                image_type: 'photo',
-                orientation: 'horizontal',
-                safesearch: 'true',
-                page: 1,
-                per_page: 40,
-            },
-        };
-        await axios.get(URL, options).then(res => {
-            if (res.status !== 200) throw new Error('Page not found');
-            renderCards(res.data);
-            Notify.info(`Hooray! We found ${res.data.totalHits} images.`);
-        });
-        await lightBox.refresh();
-    } catch (error) {
-        if (error.message) Notify.failure('Network ERROR. Page not found');
-    }
+export const getImg = async page => {
+    accessTogler(true);
+    const options = {
+        params: {
+            key: API_KEY,
+            q: searchText,
+            image_type: 'photo',
+            orientation: 'horizontal',
+            safesearch: 'true',
+            page: page,
+            per_page: 40,
+        },
+    };
+    const { data } = await axios('api/', options);
+    accessTogler(false);
+    return data;
 };

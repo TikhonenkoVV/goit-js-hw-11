@@ -1,10 +1,12 @@
 import { refs } from './refs.js';
 
 export const renderCards = cards => {
-    return (refs.galleryBox.innerHTML = cards.hits.reduce(
-        (html, card) =>
-            html +
-            `<a class="gallery__item photo-card" href="${card.largeImageURL}">
+    return refs.galleryBox.insertAdjacentHTML(
+        'beforeend',
+        cards.reduce(
+            (html, card) =>
+                html +
+                `<a class="gallery__item photo-card" href="${card.largeImageURL}">
             <div class="photo-card-box">
                 <img class="gallery__image" src="${card.webformatURL}" alt="Tags: ${card.tags}" />
                 <div class="photo-card-overlay">
@@ -49,6 +51,7 @@ export const renderCards = cards => {
                 </div>
             </div>
         </a>`,
-        ''
-    ));
+            ''
+        )
+    );
 };
