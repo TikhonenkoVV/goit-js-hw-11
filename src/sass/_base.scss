@@ -16,7 +16,10 @@ html {
 body {
     padding: 60px 0 0;
     font-family: 'Roboto', sans-serif;
-    // color: $textcolor;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -43,4 +46,12 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
+}
+
+.icon {
+    fill: #404040;
+}
+
+button {
+    cursor: pointer;
 }
