@@ -22,6 +22,8 @@
     "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
+    "resize-observer-polyfill": "^1.5.1",
+    "simplebar": "^6.2.1",
     "simplelightbox": "^2.12.1"
   },
   "devDependencies": {

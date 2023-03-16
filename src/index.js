@@ -4,6 +4,10 @@ import { toggleMenu } from './js/toogle-option.js';
 import { onLoad } from './js/on-load.js';
 import { onOptionChange } from './js/option.js';
 import { onLoadMore } from './js/load-more.js';
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
+
+new SimpleBar(refs.container);
 
 refs.searchForm.addEventListener('submit', onSubmit);
 

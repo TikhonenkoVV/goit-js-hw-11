@@ -1,0 +1,9 @@
+.blur-box {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.blur-box.active {
+    filter: blur(1px);
+}
