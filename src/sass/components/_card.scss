@@ -34,7 +34,8 @@
     padding: 8px;
     text-align: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: white;
+    background-color: var(--info-color);
+    transition: background-color 250ms;
 }
 
 .info-item {
@@ -46,7 +47,8 @@
 }
 
 .info-icon {
-    fill: var(--first-color);
+    fill: var(--info-icon-color);
+    transition: fill 250ms;
 }
 
 .photo-card img {

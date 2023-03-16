@@ -19,6 +19,8 @@ body {
     background-color: #fff;
     overflow: hidden;
     display: flex;
+    color: var(--text-color);
+    transition: color 250ms;
     flex-direction: column;
 }
 
@@ -50,6 +52,7 @@ h6 {
 
 .icon {
     fill: #404040;
+    transition: fill 250ms;
 }
 
 button {

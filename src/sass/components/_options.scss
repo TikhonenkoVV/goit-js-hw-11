@@ -4,21 +4,27 @@
     right: 0;
     width: 300px;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--options-color);
     padding: 52px 16px 16px;
-    transition: transform 250ms;
+    transition: background-color 250ms, transform 250ms;
+    box-shadow: -10px 0px 24px 0px rgba(0, 0, 0, 0.5);
 }
 
 .options__close {
     position: absolute;
     top: 16px;
     right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
     padding: 0;
     margin: 0;
     border: none;
-    background: none;
+    border-radius: 50%;
+    background-color: #fff;
+    // background: none;
     fill: var(--first-color);
 }
 

@@ -42,7 +42,13 @@ export const onSubmit = async e => {
             }
             lightBox.refresh();
             totalImg = totalHits;
-        } else Notify.warning(`We found ${totalHits} images.`);
+        } else {
+            if (!refs.buttonLoadMore.classList.contains('visually-hidden'))
+                refs.buttonLoadMore.classList.add('visually-hidden');
+            Notify.warning(
+                `"Sorry, there are no images matching your search query. Please try again."`
+            );
+        }
     }
     e.target.reset();
 };
